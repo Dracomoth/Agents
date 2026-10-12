@@ -1,0 +1,26 @@
+# Apache Configuration for Production (Hostinger / cPanel)
+
+# 1. Disable directory browsing
+Options -Indexes
+
+# 2. Block direct web access to sensitive files
+<FilesMatch "(^\.env|^\.git|config\.php|\.sql|\.sqlite|\.log)$">
+    Require all denied
+</FilesMatch>
+
+# 3. URL Rewriting to Front Controller
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Block direct access to database scripts folder
+    RewriteRule ^database/ - [F,L]
+
+    # If the requested resource is an existing file or directory, serve directly
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Send all other requests to index.php
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

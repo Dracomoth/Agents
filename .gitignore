@@ -1,0 +1,42 @@
+# Configuration files (Keep example template, ignore active credentials)
+/config/config.php
+!/config/config.example.php
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Test files, scratch scripts and testing artifacts
+test_*.php
+*_test.php
+*test*.php
+/tests/
+/scratch/
+router.php
+
+# Database files & local SQLite dumps
+*.sqlite
+*.sqlite3
+*.db
+/database/*.sqlite
+/database/*.sqlite3
+/database/*.db
+
+# Log files and runtime caches
+*.log
+*.tmp
+*.temp
+
+# Operating System artifacts
+.DS_Store
+Thumbs.db
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Vendor / dependencies
+/vendor/
