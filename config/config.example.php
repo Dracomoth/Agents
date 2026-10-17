@@ -35,22 +35,5 @@ if (!defined('APP_NAME')) {
 
 // Supported AI Providers (Models are dynamically stored in the database)
 return [
-    'providers' => [
-        'gemini' => [
-            'name' => 'Google Gemini',
-            'endpoint' => 'https://generativelanguage.googleapis.com/v1beta/models/'
-        ],
-        'openai' => [
-            'name' => 'OpenAI',
-            'endpoint' => 'https://api.openai.com/v1/chat/completions'
-        ],
-        'anthropic' => [
-            'name' => 'Anthropic Claude',
-            'endpoint' => 'https://api.anthropic.com/v1/messages'
-        ],
-        'groq' => [
-            'name' => 'Groq (Ultra-fast)',
-            'endpoint' => 'https://api.groq.com/openai/v1/chat/completions'
-        ]
-    ]
+    'providers' => []
 ];
